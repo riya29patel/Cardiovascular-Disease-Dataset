@@ -18,16 +18,16 @@ header[data-testid="stHeader"] {
 
 /* App background */
 .stApp {
-    background-color: #F0FDFA; 
+    background-color: #F0FDFA;
 }
 
 /* Form card */
 div[data-testid="stForm"] {
     background-color: #FFFFFF;
-    padding: 28px;
+    padding: 30px;
     border-radius: 18px;
     border: 2px solid #2EC4B6;
-    box-shadow: 0 10px 25px rgba(46, 196, 182, 0.1);
+    box-shadow: 0 10px 25px rgba(46, 196, 182, 0.12);
 }
 
 /* Headings */
@@ -35,35 +35,24 @@ h1, h2, h3 {
     color: #006D77 !important;
 }
 
-/* Labels & text */
+/* Labels */
 label, p, span {
     color: #134E4A !important;
     font-weight: 500;
 }
 
-/* --- SELECT BOXES --- */
-div[data-baseweb="select"] > div {
-    background-color: #E6FFFA !important; 
-    border: 1.5px solid #2EC4B6 !important;
-    border-radius: 12px !important;
-    color: #042F2E !important;
-}
-
-/* --- NUMBER INPUTS --- */
+/* Select & inputs */
+div[data-baseweb="select"] > div,
 div[data-testid="stNumberInput"] input {
     background-color: #E6FFFA !important;
     border: 1.5px solid #2EC4B6 !important;
     border-radius: 12px !important;
     padding: 12px 16px !important;
-    min-height: 48px !important;
-    color: #042F2E !important;
 }
 
+/* Remove number arrows */
 button[data-testid="stNumberInputStepUp"],
-button[data-testid="stNumberInputStepDown"] {
-    display: none !important;
-}
-
+button[data-testid="stNumberInputStepDown"],
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     display: none !important;
@@ -73,46 +62,59 @@ input[type="number"] {
     appearance: textfield !important;
 }
 
-/* ---------- RADIO BUTTON FIX (DEPLOYMENT SAFE) ---------- */
+/* =============================== */
+/* 🔥 PERFECT RADIO BOXES (FINAL) */
+/* =============================== */
+
 div[role="radiogroup"] {
     background-color: #E6FFFA !important;
-    padding: 14px 16px !important;
-    border-radius: 12px !important;
     border: 1.5px solid #2EC4B6 !important;
+    border-radius: 14px !important;
 
-    /* 🔒 lock equal size after deployment */
-    min-height: 90px !important;
+    padding: 18px 20px !important;
+    min-height: 120px !important;
+    width: 100% !important;
+
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
+    align-items: flex-start !important;
 }
 
+/* Space between Yes & No */
 div[role="radiogroup"] label {
-    margin: 4px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 8px 0 !important;
 }
 
+/* Radio outer circle */
 div[role="radiogroup"] label div:first-child {
-    background-color: #E6FFFA !important;
     border: 1.5px solid #2EC4B6 !important;
+    background-color: #E6FFFA !important;
 }
 
+/* Radio inner dot */
 div[role="radiogroup"] label div:first-child div {
     background-color: #2EC4B6 !important;
 }
 
+/* Radio text */
 div[role="radiogroup"] label div:nth-child(2) {
+    font-size: 15px !important;
+    font-weight: 600 !important;
     color: #134E4A !important;
-    font-weight: 500 !important;
 }
 
-/* --- SUBMIT BUTTON --- */
+/* Submit button */
 div[data-testid="stFormSubmitButton"] button {
-    background-color: #2EC4B6 !important; 
+    background-color: #2EC4B6 !important;
     color: #FFFFFF !important;
     border-radius: 14px !important;
     font-size: 18px !important;
-    width: 100% !important;
     height: 3.8rem !important;
+    width: 100% !important;
 }
 
 </style>
@@ -195,3 +197,4 @@ if submit:
             st.info("💙 Continue maintaining healthy lifestyle habits.")
 
         st.info(f"🔢 Your Risk Score is: {risk_score} / 8")
+
