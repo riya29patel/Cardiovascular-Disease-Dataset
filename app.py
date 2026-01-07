@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(
     page_title="Cardio Health Check",
     page_icon="🫀",
-    layout="centered"
+    layout="wide"
 )
 
 # ---------- THEME STYLING ----------
@@ -257,4 +257,5 @@ if submit:
             st.success("✅ Low Risk of Cardiovascular Disease")
             st.info("💙 Continue maintaining healthy lifestyle habits.")
         
+
         st.info(f"🔢 Your Risk Score is: {risk_score} / 8")
